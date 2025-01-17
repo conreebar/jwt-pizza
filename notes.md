@@ -13,7 +13,7 @@ As part of `Deliverable ⓵ Development deployment: JWT Pizza`, start up the app
 | Verify pizza                                        |                    |                   |              |
 | View profile page                                   |                    |                   |              |
 | View franchise<br/>(as diner)                       |                    |                   |              |
-| Logout                                              |                    |             '/api/auth', 'DELETE'      | SELECT userId FROM auth WHERE token=             |
+| Logout                                              |                    |             '/api/auth', 'DELETE'      | SELECT userId FROM auth WHERE token=  DELETE FROM auth WHERE token=?           |
 | View About page                                     |                    |                   |              |
 | View History page                                   |                    |                   |              |
 | Login as franchisee<br/>(f@jwt.com, pw: franchisee) |                    |                   |              |
