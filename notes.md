@@ -9,8 +9,8 @@ As part of `Deliverable ⓵ Development deployment: JWT Pizza`, start up the app
 | View home page                                      |                    |none                   |none              |
 | Register new user<br/>(t@jwt.com, pw: test)         |                    |'/api/auth', 'POST'  |INSERT INTO user (name, email, password) VALUES (?, ?, ?) INSERT INTO userRole (userId, role, objectId) VALUES (?, ?, ?)              |
 | Login new user<br/>(t@jwt.com, pw: test)            |                    |'/api/auth', 'PUT' |INSERT INTO user (name, email, password) VALUES (?, ?, ?) INSERT INTO userRole (userId, role, objectId) VALUES (?, ?, ?) INSERT INTO auth (token, userId) VALUES (?, ?)            |
-| Order pizza                                         |                    |     |            |
-| Verify pizza                                        |                    |                   |              |
+| Order pizza                                         |                    |  none(no cities even when in db)   |           none(no cities even when in db)  |
+| Verify pizza                                        |                    |            none(no cities even when in db)        |       none(no cities even when in db)        |
 | View profile page                                   |                    |                   |              |
 | View franchise<br/>(as diner)                       |                    |                   |              |
 | Logout                                              |                    |             '/api/auth', 'DELETE'      | SELECT userId FROM auth WHERE token=  DELETE FROM auth WHERE token=?           |
