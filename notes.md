@@ -11,7 +11,7 @@ As part of `Deliverable ⓵ Development deployment: JWT Pizza`, start up the app
 | Login new user<br/>(t@jwt.com, pw: test)            |                    |'/api/auth', 'PUT' |INSERT INTO user (name, email, password) VALUES (?, ?, ?) INSERT INTO userRole (userId, role, objectId) VALUES (?, ?, ?) INSERT INTO auth (token, userId) VALUES (?, ?)            |
 | Order pizza                                         |                    |  none(no cities even when in db)   |           none(no cities even when in db)  |
 | Verify pizza                                        |                    |            none(no cities even when in db)        |       none(no cities even when in db)        |
-| View profile page                                   |                    |                   |              |
+| View profile page                                   |                    |  /api/order                 | SELECT userId FROM auth WHERE token=?  SELECT id, franchiseId, storeId, date FROM dinerOrder WHERE dinerId=? LIMIT ${offset},${config.db.listPerPage}   (im guessing that order should be here, i just don't know why no cities are loading maybe i broke it)        |
 | View franchise<br/>(as diner)                       |                    |                   |              |
 | Logout                                              |                    |             '/api/auth', 'DELETE'      | SELECT userId FROM auth WHERE token=  DELETE FROM auth WHERE token=?           |
 | View About page                                     |                    |    none               | none              |
