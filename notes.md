@@ -17,7 +17,7 @@ As part of `Deliverable ⓵ Development deployment: JWT Pizza`, start up the app
 | View About page                                     |                    |                   |              |
 | View History page                                   |                    |                   |              |
 | Login as franchisee<br/>(f@jwt.com, pw: franchisee) |                    |  '/api/auth', 'PUT'                 | SELECT * FROM user WHERE email=? SELECT * FROM userRole WHERE userId=? INSERT INTO auth (token, userId) VALUES (?, ?)           |
-| View franchise<br/>(as franchisee)                  |                    |                   |              |
+| View franchise<br/>(as franchisee)                  |                    |/api/franchise/${user.id}                   |  SELECT userId FROM auth WHERE token=? SELECT objectId FROM userRole WHERE role='franchisee' AND userId=?    SELECT id, name FROM franchise WHERE id in (${franchiseIds.join(',')}) SELECT u.id, u.name, u.email FROM userRole AS ur JOIN user AS u ON u.id=ur.userId WHERE ur.objectId=? AND ur.role='franchisee'      |
 | Create a store                                      |                    |                   |              |
 | Close a store                                       |                    |                   |              |
 | Login as admin<br/>(a@jwt.com, pw: admin)           |                    |                   |              |
