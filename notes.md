@@ -9,7 +9,7 @@ As part of `Deliverable ⓵ Development deployment: JWT Pizza`, start up the app
 | View home page                                      |                    |none                   |none              |
 | Register new user<br/>(t@jwt.com, pw: test)         |                    |'/api/auth', 'POST'  |INSERT INTO user (name, email, password) VALUES (?, ?, ?) INSERT INTO userRole (userId, role, objectId) VALUES (?, ?, ?)              |
 | Login new user<br/>(t@jwt.com, pw: test)            |                    |'/api/auth', 'PUT' |INSERT INTO user (name, email, password) VALUES (?, ?, ?) INSERT INTO userRole (userId, role, objectId) VALUES (?, ?, ?)             |
-| Order pizza                                         |                    |                   |              |
+| Order pizza                                         |                    |/api/order/menu'       |SELECT * FROM menu              |
 | Verify pizza                                        |                    |                   |              |
 | View profile page                                   |                    |                   |              |
 | View franchise<br/>(as diner)                       |                    |                   |              |
